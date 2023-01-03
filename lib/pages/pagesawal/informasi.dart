@@ -51,20 +51,20 @@ class Informasi extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     Expanded(
-                        //       child: Text(
-                        //         movie.description,
-                        //         style: TextStyle(
-                        //           fontSize: 12.0,
-                        //         ),
-                        //       ),
-                        //     ),
-                        //     Icon(Icons.arrow_circle_right_outlined),
-                        //   ],
-                        // )
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                movie.description,
+                                style: TextStyle(
+                                  fontSize: 12.0,
+                                ),
+                              ),
+                            ),
+                            Icon(Icons.arrow_circle_right_outlined),
+                          ],
+                        )
                       ],
                     ),
                   ),
