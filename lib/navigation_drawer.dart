@@ -75,13 +75,13 @@ class NavigationDrawer extends StatelessWidget {
   }
 
   Widget headerWidget() {
-    const url =
-        'https://img.celebrities.id/okz/700/49j1HU/master_Qs82l8BI82_886_teknik_menggambar_ilustrasi.jpg';
+    // const url =
+    //     'images/Dora.ong';
     return Row(
       children: [
         const CircleAvatar(
           radius: 40,
-          backgroundImage: NetworkImage(url),
+          child: Image(image: AssetImage('images/Dora.png')),
         ),
         const SizedBox(
           width: 20,

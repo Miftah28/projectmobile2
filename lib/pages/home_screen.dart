@@ -6,8 +6,6 @@ import 'package:project2mobile/pages/informasi.dart';
 import 'package:project2mobile/pages/profile.dart';
 import 'package:project2mobile/pages/stokdarah.dart';
 
-
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -17,9 +15,18 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final items = const [
-    Icon(Icons.home, size: 30,),
-    Icon(Icons.water_drop, size: 30,),
-    Icon(Icons.bloodtype, size: 30,),
+    Icon(
+      Icons.home,
+      size: 30,
+    ),
+    Icon(
+      Icons.water_drop,
+      size: 30,
+    ),
+    Icon(
+      Icons.bloodtype,
+      size: 30,
+    ),
   ];
 
   int index = 0;
@@ -30,7 +37,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: CurvedNavigationBar(
         items: items,
         index: index,
-        onTap: (selctedIndex){
+        onTap: (selctedIndex) {
           setState(() {
             index = selctedIndex;
           });
@@ -41,17 +48,17 @@ class _HomeState extends State<Home> {
         // animationCurve: ,
       ),
       body: Container(
-        color: Colors.blue,
-        width: double.infinity,
-        height: double.infinity,
-        alignment: Alignment.center,
-        child: getSelectedWidget(index: index)
-      ),
+          color: Colors.blue,
+          width: double.infinity,
+          height: double.infinity,
+          alignment: Alignment.center,
+          child: getSelectedWidget(index: index)),
     );
   }
-Widget getSelectedWidget({required int index}){
+
+  Widget getSelectedWidget({required int index}) {
     Widget widget;
-    switch(index){
+    switch (index) {
       case 0:
         widget = const Informasi();
         break;
@@ -107,6 +114,7 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
   void onItemPressed(BuildContext context, {required int index}) {
     Navigator.pop(context);
 
@@ -125,14 +133,15 @@ class HomeScreen extends StatelessWidget {
       children: [
         const CircleAvatar(
           radius: 40,
-          backgroundImage: NetworkImage(url),
+          child: Image(image: AssetImage('images/Dora.png')),
         ),
-        const SizedBox(width: 20,),
+        const SizedBox(
+          width: 20,
+        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('DORA',
-                style: TextStyle(fontSize: 30, color: Colors.white)),
+            Text('DORA', style: TextStyle(fontSize: 30, color: Colors.white)),
           ],
         )
       ],

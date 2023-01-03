@@ -9,32 +9,71 @@ class Informasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const NavigationDrawer(),
-        appBar: AppBar(
-          title: const Text('Informasi Kesehatan'),
-          centerTitle: true,
-          backgroundColor: Colors.red,
-        ),
-        body: ListView.builder(
-            itemCount: movieList.length,
-            itemBuilder: (context, index) {
-              Movie movie = movieList[index];
-              return Card(
+      drawer: const NavigationDrawer(),
+      appBar: AppBar(
+        title: const Text('Informasi Kesehatan'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+      ),
+      body: ListView.builder(
+        itemCount: movieList.length,
+        itemBuilder: (context, index) {
+          Movie movie = movieList[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => MovieDetailsScreen(movie)));
+            },
+            child: Container(
+              height: 180,
+              child: Card(
                 elevation: 2.0,
                 margin: EdgeInsets.all(10),
-                child: ListTile(
-                  title: Text(movie.title),
-                  subtitle: Text(movie.year.toString()),
-                  leading: Image.network(movie.imageUrl),
-                  trailing: Icon(Icons.arrow_forward_rounded),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => MovieDetailsScreen(movie)));
-                  },
-                ),
-              );
-            }));
+                child: Row(children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    height: 120,
+                    width: 120,
+                    child: Image.network(movie.imageUrl),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            movie.title,
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     Expanded(
+                        //       child: Text(
+                        //         movie.description,
+                        //         style: TextStyle(
+                        //           fontSize: 12.0,
+                        //         ),
+                        //       ),
+                        //     ),
+                        //     Icon(Icons.arrow_circle_right_outlined),
+                        //   ],
+                        // )
+                      ],
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+          );
+        },
+      ),
+    );
   }
 }
