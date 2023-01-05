@@ -56,7 +56,7 @@ class Informasi extends StatelessWidget {
                           children: [
                             Expanded(
                               child: Text(
-                                movie.description,
+                                movie.subdescription,
                                 style: TextStyle(
                                   fontSize: 12.0,
                                 ),

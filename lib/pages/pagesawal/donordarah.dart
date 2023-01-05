@@ -4,6 +4,7 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:project2mobile/Services/globals.dart';
 import 'package:project2mobile/navigation_drawer.dart';
 import 'package:http/http.dart' as http;
+import 'package:project2mobile/pages/daftardonordarah.dart';
 
 class Donordarah extends StatelessWidget {
   const Donordarah({Key? key}) : super(key: key);
@@ -35,13 +36,13 @@ class Donordarah extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return
                       // GestureDetector(
-                      // onTap: () {
-                      //   Navigator.push(
-                      //       context,
-                      //       MaterialPageRoute(
-                      //           builder: (context) => MovieDetailsScreen(movie)));
-                      // },
-                      // child:
+                      //     onTap: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => DaftarDonorDarah(daftar: konten.data['data'][index])));
+                      //     },
+                      //     child:
                       Container(
                     height: 120,
                     child: Card(
@@ -124,7 +125,7 @@ class Donordarah extends StatelessWidget {
                       ]),
                     ),
                   );
-                  // )
+                  // );
                 },
               );
             } else {
